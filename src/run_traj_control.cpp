@@ -89,17 +89,17 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   goal.trajectory.joint_names.push_back("arm_6_joint");
   goal.trajectory.joint_names.push_back("arm_7_joint");*/
 
-  // Four waypoints in this goal trajectory
-  goal.trajectory.points.resize(4);
+  // Three waypoints in this goal trajectory
+  goal.trajectory.points.resize(3);
 
   // First trajectory point
   // Positions
   int index = 0;
   goal.trajectory.points[index].positions.resize(4);
-  goal.trajectory.points[index].positions[0] = 0.07;
-  goal.trajectory.points[index].positions[1] = -0.34;
-  goal.trajectory.points[index].positions[2] = -1.63;
-  goal.trajectory.points[index].positions[3] = 1.53;
+  goal.trajectory.points[index].positions[0] = 0.15;
+  goal.trajectory.points[index].positions[1] = -0.90;
+  goal.trajectory.points[index].positions[2] = -2.52;
+  goal.trajectory.points[index].positions[3] = 1.64;
   /*goal.trajectory.points[index].positions[4] = -1.57;
   goal.trajectory.points[index].positions[5] = -0.5;
   goal.trajectory.points[index].positions[6] = 0.0;*/
@@ -116,10 +116,10 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   // Positions
   index += 1;
   goal.trajectory.points[index].positions.resize(4);
-  goal.trajectory.points[index].positions[0] = 1.61;
-  goal.trajectory.points[index].positions[1] = -0.16;
-  goal.trajectory.points[index].positions[2] = -3.17;
-  goal.trajectory.points[index].positions[3] = 0.33;
+  goal.trajectory.points[index].positions[0] = 1.57;
+  goal.trajectory.points[index].positions[1] = -0.06;
+  goal.trajectory.points[index].positions[2] = -0.88;
+  goal.trajectory.points[index].positions[3] = 0.49;
   /*goal.trajectory.points[index].positions[4] = 1.0;
   goal.trajectory.points[index].positions[5] = -0.5;
   goal.trajectory.points[index].positions[6] = 0.0;*/
@@ -127,7 +127,7 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   goal.trajectory.points[index].velocities.resize(4);
   for (int j = 0; j < 4; ++j)
   {
-    goal.trajectory.points[index].velocities[j] = 0.1;
+    goal.trajectory.points[index].velocities[j] = 0.3;
   }
   // To be reached 4 seconds after starting along the trajectory
   goal.trajectory.points[index].time_from_start = ros::Duration(8.0);
@@ -136,10 +136,10 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   // Positions
   index += 1;
   goal.trajectory.points[index].positions.resize(4);
-  goal.trajectory.points[index].positions[0] = 2.42;
-  goal.trajectory.points[index].positions[1] = -1.02;
-  goal.trajectory.points[index].positions[2] = -2.62;
-  goal.trajectory.points[index].positions[3] = 1.24;
+  goal.trajectory.points[index].positions[0] = 2.30;
+  goal.trajectory.points[index].positions[1] = 0.82;
+  goal.trajectory.points[index].positions[2] = 1.00;
+  goal.trajectory.points[index].positions[3] = 1.69;
   /*goal.trajectory.points[index].positions[4] = 1.0;
   goal.trajectory.points[index].positions[5] = -0.5;
   goal.trajectory.points[index].positions[6] = 0.0;*/
@@ -147,30 +147,11 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   goal.trajectory.points[index].velocities.resize(4);
   for (int j = 0; j < 4; ++j)
   {
-    goal.trajectory.points[index].velocities[j] = 0.1;
+    goal.trajectory.points[index].velocities[j] = 0.2;
   }
   // To be reached 4 seconds after starting along the trajectory
-  goal.trajectory.points[index].time_from_start = ros::Duration(12.0);
+  goal.trajectory.points[index].time_from_start = ros::Duration(15.0);
 
-  // Fourth trajectory point
-  // Positions
-  index += 1;
-  goal.trajectory.points[index].positions.resize(4);
-  goal.trajectory.points[index].positions[0] = 0.07;
-  goal.trajectory.points[index].positions[1] = -0.34;
-  goal.trajectory.points[index].positions[2] = -1.63;
-  goal.trajectory.points[index].positions[3] = 1.53;
-  /*goal.trajectory.points[index].positions[4] = 1.0;
-  goal.trajectory.points[index].positions[5] = -0.5;
-  goal.trajectory.points[index].positions[6] = 0.0;*/
-  // Velocities
-  goal.trajectory.points[index].velocities.resize(4);
-  for (int j = 0; j < 4; ++j)
-  {
-    goal.trajectory.points[index].velocities[j] = 0.1;
-  }
-  // To be reached 4 seconds after starting along the trajectory
-  goal.trajectory.points[index].time_from_start = ros::Duration(18.0);
 }
 
 std::ofstream error_file;
