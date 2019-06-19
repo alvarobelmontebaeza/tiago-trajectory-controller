@@ -107,10 +107,10 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   goal.trajectory.points[index].velocities.resize(4);
   for (int j = 0; j < 4; ++j)
   {
-    goal.trajectory.points[index].velocities[j] = 0.1;
+    goal.trajectory.points[index].velocities[j] = 0.2;
   }
   // To be reached 2 second after starting along the trajectory
-  goal.trajectory.points[index].time_from_start = ros::Duration(4.0);
+  goal.trajectory.points[index].time_from_start = ros::Duration(8.0);
 
   // Second trajectory point
   // Positions
@@ -127,10 +127,10 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
   goal.trajectory.points[index].velocities.resize(4);
   for (int j = 0; j < 4; ++j)
   {
-    goal.trajectory.points[index].velocities[j] = 0.3;
+    goal.trajectory.points[index].velocities[j] = 0.2;
   }
   // To be reached 4 seconds after starting along the trajectory
-  goal.trajectory.points[index].time_from_start = ros::Duration(8.0);
+  goal.trajectory.points[index].time_from_start = ros::Duration(13.0);
 
   // Third trajectory point
   // Positions
@@ -150,7 +150,7 @@ void waypoints_arm_goal(control_msgs::FollowJointTrajectoryGoal& goal)
     goal.trajectory.points[index].velocities[j] = 0.2;
   }
   // To be reached 4 seconds after starting along the trajectory
-  goal.trajectory.points[index].time_from_start = ros::Duration(15.0);
+  goal.trajectory.points[index].time_from_start = ros::Duration(17.0);
 
 }
 
