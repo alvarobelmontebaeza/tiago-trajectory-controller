@@ -160,9 +160,7 @@ int error_cont = 0;
 void errorCallback(const std_msgs::Float64MultiArray::ConstPtr& msg)
 {
   error_cont++;
-  if(error_cont < 1000)
-    return;
-
+  
   error_file << error_cont << " ";
   for(int i=0;i<msg->data.size();i++)
     error_file << msg->data[i] << " ";
@@ -177,9 +175,7 @@ int torque_cont = 0;
 void torqueCallback(const std_msgs::Float64MultiArray::ConstPtr& msg)
 {
   torque_cont++;
-  if(torque_cont < 1000)
-    return;
-  
+   
   torque_file << torque_cont << " ";
   for(int i=0;i<msg->data.size();i++)
     torque_file << msg->data[i] << " ";
